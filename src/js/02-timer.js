@@ -10,6 +10,7 @@ const secondsElems = document.querySelector('[data-seconds]');
 
 startTimerBtn.disabled = true;
 let startedTimer = false;
+let overTime = null;
 
 
 const options = {
