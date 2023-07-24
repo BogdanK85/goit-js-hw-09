@@ -1,21 +1,23 @@
 const startBtn = document.querySelector('[data-start]');
 const stopBtn = document.querySelector('[data-stop]');
+stopBtn.disabled = true;
+startBtn.disabled = false;
 let intervalChangeColor;
 
 startBtn.addEventListener('click', onStartBtnChangeColor)
-stopBtn.setAttribute('disablet', true)
+stopBtn.setAttribute('disabled', true)
 
 function onStartBtnChangeColor() {
-    startBtn.disablet = true;
-    stopBtn.disablet = false;
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
     intervalChangeColor = setInterval(changeRandomBodyColor, 1000)
 }
 
 stopBtn.addEventListener('click', onStopBtnChangeColor)
 
 function onStopBtnChangeColor() {
-    startBtn.disablet = false;
-    stopBtn.disablet = true;
+    startBtn.disabled = false;
+    stopBtn.disabled = true;
     clearInterval(intervalChangeColor)
 }
 

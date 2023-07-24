@@ -1,5 +1,7 @@
 
 const formPromis = document.querySelector('.form');
+const submitBtn = document.querySelector('[type="submit"]');
+//submitBtn.disabled = false;
 formPromis.addEventListener('submit', onSubmitForm);
 
 function createPromise(position, delay) {
@@ -26,7 +28,10 @@ function onSubmitForm(event) {
     const promise = createPromise(i, currentDelay);
     inputPromise(promise);
     currentDelay += currentStep;
+    //submitBtn.disabled = true;
+    formPromis.reset();
   }
+  
 }
 
 function inputPromise(promise) {

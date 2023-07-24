@@ -8,6 +8,7 @@ const hoursElems = document.querySelector('[data-hours]');
 const minutesElems = document.querySelector('[data-Minutes]');
 const secondsElems = document.querySelector('[data-seconds]');
 
+inputElems.disabled = false;
 startTimerBtn.disabled = true;
 let startedTimer = false;
 let overTime = null;
@@ -37,6 +38,7 @@ const flatPickrElem = flatpickr(inputElems, options);
 
 function onStartTimerBtnClick() {
     startTimerBtn.disabled = true;
+    inputElems.disabled = true;
     startedTimer = true;
     const choicedDates = flatPickrElem.selectedDates[0]
     const interval = setInterval(() => {
@@ -82,4 +84,4 @@ function showUpdateTimer(time) {
     hoursElems.textContent = addLeadingZero(hours);
     minutesElems.textContent = addLeadingZero(minutes);
     secondsElems.textContent = addLeadingZero(seconds);
-}
+}   
