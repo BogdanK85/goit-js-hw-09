@@ -51,6 +51,8 @@ function onStartTimerBtnClick() {
         } else {
             clearInterval(interval);
             startedTimer = false;
+            startTimerBtn.disabled = false;
+            inputElems.disabled = false;
         }
     }, 1000)
 }
